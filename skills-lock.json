@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "skills": {
+    "clerk-custom-ui": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "computedHash": "bf28bf1908604c50876a302c8bebd90cf31b04fcf0482ccfc542b22778677bcb"
+    },
+    "clerk-nextjs-patterns": {
+      "source": "clerk/skills",
+      "sourceType": "github",
+      "computedHash": "c55aeca9c8ca0602af4a2bdc0370e3c349e53752177cb1187edf213f51d34636"
+    },
+    "shadcn": {
+      "source": "shadcn/ui",
+      "sourceType": "github",
+      "computedHash": "91c02eb706f046fb9d6a061efbb96496e4be751b5b14c283cf82baaa50f3a985"
+    }
+  }
+}
