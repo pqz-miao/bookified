@@ -206,10 +206,11 @@ export const searchBookSegments = async (bookId: string, query: string, limit: n
         // Try MongoDB text search first (requires text index)
         let segments: Record<string, unknown>[] = [];
         try {
-            segments = await BookSegment.find({
-                bookId: bookObjectId,
-                $text: { $search: query },
-            })
+            segments = await BookSegment
+                .find({
+                    bookId: bookObjectId,
+                    $text: { $search: query },
+                })
                 .select('_id bookId content segmentIndex pageNumber wordCount')
                 .sort({ score: { $meta: 'textScore' } })
                 .limit(limit)
@@ -224,10 +225,11 @@ export const searchBookSegments = async (bookId: string, query: string, limit: n
             const keywords = query.split(/\s+/).filter((k) => k.length > 2);
             const pattern = keywords.map(escapeRegex).join('|');
 
-            segments = await BookSegment.find({
-                bookId: bookObjectId,
-                content: { $regex: pattern, $options: 'i' },
-            })
+            segments = await BookSegment
+                .find({
+                    bookId: bookObjectId,
+                    content: { $regex: pattern, $options: 'i' },
+                })
                 .select('_id bookId content segmentIndex pageNumber wordCount')
                 .sort({ segmentIndex: 1 })
                 .limit(limit)
