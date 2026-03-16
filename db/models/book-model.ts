@@ -1,6 +1,6 @@
 import { Document, model, Schema, models, Types } from "mongoose";
 
-interface Book extends Document {
+export interface Book extends Document {
     _id: Types.ObjectId;
     clerkId: string;
     title: string;

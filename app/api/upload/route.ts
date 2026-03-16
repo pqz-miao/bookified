@@ -29,8 +29,8 @@ export async function POST(request: Request): Promise<NextResponse> {
             onUploadCompleted: async ({ blob, tokenPayload }) => {
                 console.log('File uploaded to blob: ', blob.url)
 
-                const payload = tokenPayload ? JSON.parse(tokenPayload): null
-                const userId = payload?.userId;
+                // const payload = tokenPayload ? JSON.parse(tokenPayload): null
+                // const userId = payload?.userId;
 
                 // TODO: PostHog
             }
